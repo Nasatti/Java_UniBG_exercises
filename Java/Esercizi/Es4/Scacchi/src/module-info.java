@@ -1,0 +1,2 @@
+module Scacchi {
+}
