@@ -15,4 +15,12 @@ public class Gioco {
 	public void stampaSato() {
 		System.out.println(scacchiera.toString());
 	}
+	
+	public boolean muoviPedina(int rigaor, int colonnaor, int rigadest, int colonnadest) {
+		if(this.scacchiera.isEmpty(rigaor,  colonnaor)) return false;
+		else {
+			scacchiera.getPedina(rigadest, colonnaor).move(scacchiera, rigadest, colonnadest);
+			return true;
+		}
+	}
 }

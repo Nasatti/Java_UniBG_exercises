@@ -17,5 +17,5 @@ public class Regina extends Pedina {
 	public String toString() {
 		return "REGINA " + this.getColore();
 	}
-
+	
 }

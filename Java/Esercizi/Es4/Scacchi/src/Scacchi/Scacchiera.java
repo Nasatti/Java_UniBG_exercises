@@ -4,6 +4,7 @@ import Scacchi_pedine.Alfiere;
 import Scacchi_pedine.Cavallo;
 import Scacchi_pedine.Pedone;
 import Scacchi_pedine.Torre;
+import Scacchi_pedine.Pedina;
 
 public class Scacchiera {
 
@@ -25,6 +26,15 @@ public class Scacchiera {
 		cella[1][0].setPedina(new Pedone(Colore.BIANCO, 1, 0));
 			
 	}
+	
+	public boolean isEmpty(int r, int c) {
+		if(cella[r][c].isEmpty()) return true;
+		else return false;
+	}
+	
+	public Pedina getPedina(int r, int c) {
+		return cella[r][c].getPedina();
+	}
 		
 	public String toString() {//builder --> soluzione elegante per creare una stringa da ritornare
 		StringBuilder builder = new StringBuilder();
@@ -36,5 +46,13 @@ public class Scacchiera {
 			builder.append("\n");
 		}
 		return builder.toString();
+	}
+	
+	public void removePedina(int r, int c) {
+		cella[r][c].setPedina(null);
+	}
+	
+	public void addPedina(int r, int c, Pedina p) {
+		cella[r][c].setPedina(p);
 	}
 }
